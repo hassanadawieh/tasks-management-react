@@ -9,9 +9,9 @@ import Loading from '../../components/Loading';
 const status = ["backlog" , 'doing' , 'review' , 'done'];
 
 const TasksPage = () => {
-
   const [tasksData , setTasksData] = useState([]);
   const [showPopUp , setShowPopUp] = useState(false);
+  const [activeTask , setActiveTask] = useState(null);
   const [popUpData , setPopUpData] = useState({
     status:"",
     data:{}
@@ -70,7 +70,24 @@ const token = localStorage.getItem('ACCESS_TOKEN');
       channel.unsubscribe();
   };
   
-  },[user_id , token])
+  },[user_id , token]);
+
+
+  const onDrop = (status) => {
+        axios.put(`http://127.0.0.1:8000/api/auth/task/${activeTask.id}`, {status : status , description:activeTask.description} , {
+          headers: {
+            Authorization: `Bearer ${token}`
+        }
+        })
+          .then(response => {
+            isShowTaskManageHandler()
+            console.log('Success:', response.data);
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });
+  }
+
   return (
     <> 
     <Header />
@@ -80,7 +97,7 @@ const token = localStorage.getItem('ACCESS_TOKEN');
         <h2>Workspace</h2>
         <div className='boardTasksContainer'>
             {status.map((state) => {
-              return <BoxTasks status={state} tasks={tasksData} taskManageHandler={taskManageHandler}  />
+              return <BoxTasks onDrop={onDrop} status={state} tasks={tasksData} taskManageHandler={taskManageHandler} setActiveTask={setActiveTask}  />
             })}
         </div>
     </div>

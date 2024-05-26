@@ -52,36 +52,7 @@ const TaskManage = ({popUpData , isShowTaskManageHandler}) => {
             console.error('Error:', error);
           });
       }else if(popUpData.status === "Completed"){
-        setIsLoading(true)
-        let newStatus = ""
-        switch (popUpData.data.status) {
-          case "backlog":
-            newStatus = "doing";
-            break;
-          case "doing":
-            newStatus = "review";
-            break;
-          case "review":
-            newStatus = "done";
-            break;
-          default:
-            // Optionally handle cases where status does not match any known statuses
-            console.warn("Unknown status:", popUpData.data.status);
-            break;
-        }
-        axios.put(`http://127.0.0.1:8000/api/auth/task/${popUpData.data.id}`, {status : newStatus , description:popUpData.data.description} , {
-          headers: {
-            Authorization: `Bearer ${token}`
-        }
-        })
-          .then(response => {
-            setIsLoading(false)
-            isShowTaskManageHandler()
-            console.log('Success:', response.data);
-          })
-          .catch(error => {
-            console.error('Error:', error);
-          });
+       
       }else if(popUpData.status === "Delete"){
         setIsLoading(true)
         axios.delete(`http://127.0.0.1:8000/api/auth/task/${popUpData.data.id}`, {

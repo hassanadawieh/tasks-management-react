@@ -2,13 +2,14 @@ import React from 'react';
 import { FaPlus } from "react-icons/fa";
 import "./BoxTasks.css";
 import Task from '../Task/Task';
+import DropArea from '../UI/DropArea/DropArea';
 
 
 const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
   };
 
-const BoxTasks = ({status , tasks , taskManageHandler}) => {
+const BoxTasks = ({status , tasks , taskManageHandler , setActiveTask , onDrop}) => {
     const statusTasks = tasks?.filter((task) => task.status === status);
 
     const addHandler = () => {
@@ -23,10 +24,11 @@ const BoxTasks = ({status , tasks , taskManageHandler}) => {
       <div className='tasksContainer'>
       {statusTasks?.map((task) =>
     {
-     return <Task task={task} taskManageHandler={taskManageHandler} />
+     return <Task task={task} taskManageHandler={taskManageHandler} setActiveTask={setActiveTask} />
     }
     )}
       </div>
+      <DropArea onDrop={() => onDrop(status)} status={status}/>
     </div>
   )
 }

@@ -4,6 +4,12 @@
     border-radius: 10px;
     padding-top: 2rem;
     padding: 1rem;
+    cursor: grab;
+}
+
+.taskContainer:active{
+    opacity:0.7;
+    border:1px solid #111;
 }
 
 .taskDescription {
