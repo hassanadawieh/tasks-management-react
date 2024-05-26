@@ -1,0 +1,70 @@
+
+
+.loginContainer {
+    height: 94.5vh;
+    background-image: url("../../components//assets/images/team(2).jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly ;
+}
+
+.formContainer {
+    position: relative;
+    border: 2px solid white;
+    width: 17rem;
+    min-height: 20rem;
+    border-radius: 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 4), 
+    0 1px 3px rgba(0, 0, 0, 0.01);
+    backdrop-filter: blur(8px);
+}
+
+.title{
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+}
+
+.inputs {
+    width: 90%;
+    gap:1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.input{
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 15px;
+    border: none;
+    background-color: white;
+}
+
+.input:focus{
+    outline: transparent;
+}
+
+.statusButton:hover{
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.button {
+    position: absolute;
+    bottom : 6px;
+    right: 6px;
+}
+
+.pLog{
+    color: white;
+}

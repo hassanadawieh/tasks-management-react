@@ -1,0 +1,33 @@
+.headerContainer {
+    height: 10vh;
+    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0 1rem ;
+}
+
+.user-icon {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius:50%;
+}
+
+.user-icon:hover{
+    cursor: pointer;
+}
+
+.content-container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logoutButton{
+    font-size: 30px;
+}
+
+.logoutButton:hover{
+    cursor: pointer;
+}

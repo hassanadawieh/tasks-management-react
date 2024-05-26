@@ -1,0 +1,14 @@
+.buttonContainer{
+    padding: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: var(--primary-color);
+    color:white;
+    display: flex;
+    align-items: center;
+}
+.buttonContainer:hover {
+    cursor: pointer;
+}

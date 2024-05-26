@@ -1,0 +1,35 @@
+.taskContainer{
+    position: relative;
+    background-color: white;
+    border-radius: 10px;
+    padding-top: 2rem;
+    padding: 1rem;
+}
+
+.taskDescription {
+    font-size: 12px;
+    
+}
+
+.actionContainer {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.actionContainer .editButton, .checkButton {
+  color:green;
+}
+
+.actionContainer .deleteButton {
+    color: red
+}
+
+.actionContainer .editButton, .deleteButton, .checkButton:hover {
+    cursor: pointer;
+}
+
+

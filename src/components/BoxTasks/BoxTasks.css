@@ -1,0 +1,56 @@
+.boxContainer {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    width: 17rem;
+    padding-bottom: 12px;
+
+}
+
+.backlog {
+    background-color:pink ;
+    position: relative;
+}
+
+.doing {
+    background-color: yellow;
+}
+
+.review {
+    background-color: green;
+}
+
+.done {
+    background-color: aqua;
+}
+
+.backlog, .doing, .done, .review {
+    padding: 10px;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.tasksContainer{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.addIcon{
+    position: absolute;
+    top:30%;
+    left:20%
+}
+
+.addIcon:hover {
+    cursor: pointer;
+}
+
+@media screen and (min-width:768px){
+    .boxContainer {
+        width: 14rem;
+    }
+}

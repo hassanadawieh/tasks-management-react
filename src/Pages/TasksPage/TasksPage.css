@@ -1,0 +1,14 @@
+.tasksPageContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:4rem
+}
+
+.boardTasksContainer {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
